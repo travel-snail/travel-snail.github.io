@@ -238,7 +238,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/01/07/first/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/01/07/redis/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="travel-snail">
@@ -260,8 +260,8 @@
             
               
                 
-                <a class="post-title-link" href="/2020/01/07/first/" itemprop="url">
-                  first
+                <a class="post-title-link" href="/2020/01/07/redis/" itemprop="url">
+                  redis
                 </a>
               
             
@@ -277,7 +277,7 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-01-07T04:08:40-05:00">
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-01-07T05:19:06-05:00">
                 2020-01-07
               </time>
             
@@ -315,7 +315,18 @@
       
         
           
-            
+            <h1 id="redis"><a href="#redis" class="headerlink" title="redis"></a>redis</h1><h3 id="1-安装"><a href="#1-安装" class="headerlink" title="1, 安装"></a>1, 安装</h3><h3 id="mac-os"><a href="#mac-os" class="headerlink" title="[mac os]"></a>[mac os]</h3><h4 id="1-1-homebrew方法安装"><a href="#1-1-homebrew方法安装" class="headerlink" title="1.1 homebrew方法安装"></a>1.1 homebrew方法安装</h4><p>如果没有homebrew，安装方法参看：<a href="https://brew.sh/" target="_blank" rel="noopener">https://brew.sh/</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;usr&#x2F;bin&#x2F;ruby -e &quot;$(curl -fsSL https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;Homebrew&#x2F;install&#x2F;master&#x2F;install)&quot;</span><br></pre></td></tr></table></figure>
+
+<h6 id="install"><a href="#install" class="headerlink" title="install"></a>install</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">brew install redis</span><br><span class="line"># start service</span><br><span class="line">brew services start redis</span><br><span class="line"># stop service</span><br><span class="line">brew services stop redis</span><br><span class="line"># restart service</span><br><span class="line">brew service restart redis</span><br></pre></td></tr></table></figure>
+
+
+<h4 id="1-2-源码编译安装"><a href="#1-2-源码编译安装" class="headerlink" title="1.2 源码编译安装"></a>1.2 源码编译安装</h4><p><a href="https://redis.io/download" target="_blank" rel="noopener">https://redis.io/download</a></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> wget http://download.redis.io/releases/redis-5.0.5.tar.gz</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> tar xzf redis-5.0.5.tar.gz</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> <span class="built_in">cd</span> redis-5.0.5</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> make</span></span><br><span class="line"><span class="meta">#</span><span class="bash"><span class="comment"># make install 安装</span></span></span><br><span class="line"><span class="meta">$</span><span class="bash"> sudo make install</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"><span class="comment">#</span></span></span><br></pre></td></tr></table></figure>
+
+<h3 id="2，使用"><a href="#2，使用" class="headerlink" title="2，使用"></a>2，使用</h3><h4 id="命令参考"><a href="#命令参考" class="headerlink" title="命令参考"></a><a href="http://redisdoc.com/index.html" target="_blank" rel="noopener">命令参考</a></h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">#1， 查看延时</span><br><span class="line">redis-cli --latency -h 127.0.0.1 -p 6379</span><br><span class="line">使用slowlog查出引发延迟的慢命令</span><br><span class="line">slowlog get</span><br></pre></td></tr></table></figure>
+
+
           
         
       
